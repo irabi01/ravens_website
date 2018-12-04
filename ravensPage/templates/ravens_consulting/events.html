@@ -1,0 +1,44 @@
+{% extends "ravens_consulting/base.html" %}
+{% block title %}EVENTS{% endblock %}
+
+{% block contents %}
+<div class="ravens_content">
+  {% include "ravens_consulting/header.html" %}
+  <center><h1>{{site_heading}}</h1></center>
+  <div class="event_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            {% for event in getData %}
+            <div class="col-md-6">
+              <a href="/ravens_consulting/details/{{event.id}}">
+              <div class="card mb-3">
+                <img class="card-img-top" src="/static/images/analyses.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{event.heading}}</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated {{event.created_at}}</small></p>
+                </div>
+              </div>
+              </a>
+            </div>
+            {% endfor %}
+
+          </div>
+          <ul class="list-group">
+
+          </ul>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include "ravens_consulting/footer.html" %}
+</div>
+{% endblock %}
