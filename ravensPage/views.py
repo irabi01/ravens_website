@@ -35,7 +35,7 @@ def ict(request):
 def research(request):
     service_research_template = 'ravens_consulting/services/research.html'
     return render(request, service_research_template)
-    
+
 def publication(request):
     publication_template = 'ravens_consulting/publication.html'
     return render(request, publication_template)
